@@ -1,0 +1,1 @@
+{"name":"RecipeFinder","version":"1.0.0","description":"","main":"index.js","scripts":{"dev":"next","build":"next build","start":"next start"},"keywords":[],"author":"","license":"ISC","dependencies":{"next":"^9.1.4","react":"^16.12.0","react-dom":"^16.12.0"},"readme":"ERROR: No README data found!","_id":"RecipeFinder@1.0.0"}
