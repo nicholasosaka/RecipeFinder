@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-const About = () => (
-    <div>
-        <Link href="/index">
-            <a> Index </a>
-        </Link>
-        <p>Hello Next.js</p>
-    </div>
-);
+import Header from '../components/Header';
 
-export default About;
+export default function Index() {
+    return (
+        <div>
+            <Header />
+            <p>Hello Next.js</p>
+        </div>
+    );
+}
