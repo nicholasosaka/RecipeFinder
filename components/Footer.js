@@ -8,6 +8,7 @@ const linkStyle = {
 
 const Footer = () => (
     <div>
+
         <Link href="/">
             <a style={linkStyle}>Home</a>
         </Link>
