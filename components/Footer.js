@@ -1,7 +1,9 @@
 import Link from 'next/link';
 
 const linkStyle = {
-    marginRight: 15
+    marginRight: 15,
+    border: '2px solid #DDD',
+    borderColor: 'blue'
 };
 
 const Footer = () => (

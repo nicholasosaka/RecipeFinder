@@ -8,6 +8,7 @@ export default function Index() {
     return (
         <Layout>
             <p>Hello Next.js</p>
+            <br> </br>
         </Layout>
     );
 }
