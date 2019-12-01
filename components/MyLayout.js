@@ -4,7 +4,8 @@ import Footer from "./Footer";
 const layoutStyle = {
     margin: 20,
     padding: 20,
-    border: '1px solid #DDD'
+    border: '1px solid #DDD',
+    backgroundColor: '#47d1d1'
 };
 
 const Layout = props => (

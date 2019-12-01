@@ -3,6 +3,7 @@ import Link from 'next/link';
 const linkStyle = {
     marginRight: 15,
     border: '2px solid #DDD',
+    padding: 20,
     borderColor: 'blue'
 };
 

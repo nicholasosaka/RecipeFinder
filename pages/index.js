@@ -8,10 +8,12 @@ const PostLink = props => (
         </Link>
     </li>
 );
+const hStyle = { color: 'white' };
+//const element = <h1 style={ hStyle }>Hello world</h1>
 export default function Blog() {
     return (
         <Layout>
-            <h1>My Blog</h1>
+            <h1 style={ hStyle }>My Blog</h1>
             <ul>
                 <PostLink title="Hello Next.js" />
                 <PostLink title="Learn Next.js is awesome" />
