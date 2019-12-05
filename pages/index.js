@@ -23,6 +23,6 @@ Index.getInitialProps = async function(){
     return {
         recipes: data
     }
-}
+};
 
 export default Index;
