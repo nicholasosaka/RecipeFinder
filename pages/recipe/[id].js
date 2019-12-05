@@ -1,13 +1,11 @@
-import { useRouter } from "next/router";
-import Layout from "../../components/MyLayout";
+import Layout from '../../components/MyLayout';
+import fetch from 'isomorphic-unfetch';
 
-export default function Post() {
-    const router = useRouter();
+const Post = props => (
+    <Layout>
+        <h1>{props.recipe.name}</h1>
+        <p>{props.recipe.summary.replace(/<[/]?[pb]>/g, '')}</p>
+    </Layout>
+);
 
-    return (
-        <Layout>
-            <h1>{router.query.id}</h1>
-            <p>This is the blog post content.</p>
-        </Layout>
-    );
-}
+export default Post;

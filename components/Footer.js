@@ -8,13 +8,7 @@ const linkStyle = {
 
 const Footer = () => (
     <div>
-
-        <Link href="/">
-            <a style={linkStyle}>Home</a>
-        </Link>
-        <Link href="/about">
-            <a style={linkStyle}>About</a>
-        </Link>
+        <p>Created by Project Recipe</p>
     </div>
 );
 
