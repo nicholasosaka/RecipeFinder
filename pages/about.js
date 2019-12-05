@@ -1,7 +1,9 @@
-const About = () => {
-    <div>
-        <p>This is the about page</p>
-    </div>
-}
+import Layout from '../components/MyLayout.js'
 
-export default About;
+export default function About() {
+    return (
+        <Layout>
+            <p>This is the about page</p>
+        </Layout>
+    )
+}
