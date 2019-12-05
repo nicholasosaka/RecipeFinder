@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import Layout from '../components/MyLayout';
 //const hstyle = { color: 'white' };
 const Page = () => {
     const router = useRouter();
