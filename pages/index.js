@@ -11,6 +11,7 @@ const Index = (props) => (
         <p>Enter the ingredients that you want to use (comma separated):</p>
         <Form />
 
+        //todo delete
         <p>FOR DEBUG ONLY</p>
         <ul>
             {props.recipes.map(recipe =>(
