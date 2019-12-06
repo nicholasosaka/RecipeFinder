@@ -25,7 +25,7 @@ const Index = (props) => (
 );
 
 Index.getInitialProps = async function() {
-    const res = await fetch('https://raw.githubusercontent.com/ProjectRecipe/RecipeFinder/master/datasets/clean_recipes.json');
+    const res = await fetch('https://raw.githubusercontent.com/ProjectRecipe/RecipeFinder/master/datasets/clean_recipes_smaller.json');
     const data = await res.json();
 
     console.log(res);
