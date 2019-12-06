@@ -1,20 +1,20 @@
 class Form extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {formSubmission: ''};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({formSubmission: event.target.formSubmission});
     }
 
     handleSubmit(event) {
-        const keywords = this.state.value.split(",");
+        const keywords = this.state.formSubmission.split(",");
         keywords.map(word => word.trim());
-        this.state.value = keywords;
+        this.state.formSubmission = keywords;
 
         event.preventDefault();
     }
@@ -24,7 +24,7 @@ class Form extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Ingredients:
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                    <input type="text" value={this.state.formSubmission} onChange={this.handleChange} />
                 </label>
                 <input type="submit" value="Submit" />
             </form>

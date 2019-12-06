@@ -14,8 +14,8 @@ const Index = (props) => (
         <p>FOR DEBUG ONLY</p>
         <ul>
             {props.recipes.map(recipe =>(
-                <li key={recipe.title}>
-                    <Link href="/recipe/[id]" as={`/recipe/${recipe.title}`}>
+                <li key={recipe.index}>
+                    <Link href="/recipe/[id]" as={`/recipe/${recipe.index}`}>
                         <a>{recipe.title}</a>
                     </Link>
                 </li>
@@ -28,7 +28,6 @@ Index.getInitialProps = async function() {
     const res = await fetch('https://raw.githubusercontent.com/ProjectRecipe/RecipeFinder/master/datasets/clean_recipes_smaller.json');
     const data = await res.json();
 
-    console.log(res);
     console.log(`Recipe data fetched. Count: ${data.length}`);
 
     return {
