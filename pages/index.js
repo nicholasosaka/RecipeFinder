@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Layout from '../components/MyLayout';
 import fetch from 'isomorphic-unfetch';
-import Link from 'next/Link'
+import Link from 'next/link';
 import Form from '../components/Form';
 
 const Index = (props) => (
