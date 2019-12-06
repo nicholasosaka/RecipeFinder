@@ -1,5 +1,4 @@
 import Layout from '../components/MyLayout';
-import Link from 'next/link';
 
 const Results = props => (
     <Layout>

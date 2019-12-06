@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Layout from '../components/MyLayout';
 import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
