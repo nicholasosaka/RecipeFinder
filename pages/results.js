@@ -8,13 +8,13 @@ import React from "react";
 const Results = props => {
     const router = useRouter();
 
-    console.log(router.query);
-
     const { q } = router.query;
+
+    console.log(`query object: ${q}`);
 
     const fullQueryData = processQueryData(q);
 
-    const top = topSelection(sortByCalories(processTop(fullQueryData, props.recipes)));
+    const top = topSelection(processTop(fullQueryData, props.recipes));
 
     return (
         <Layout>
@@ -37,13 +37,13 @@ const Results = props => {
 const topSelection = (arr) => {
     let topSel = [];
 
-    if(arr.length === 0){
-        return topSel;
+    for(let i = 0; i < 10; i++){
+        if(arr.length > i){
+            topSel.push(arr[i]);
+        }
     }
 
-    for(let i = 0; i < 10; i++){
-        topSel.push(arr[i]);
-    }
+    console.info(`Successful top selection: ${topSel.length}`);
 
     return topSel;
 };
