@@ -92,7 +92,7 @@ const processQueryData = (data) => {
 };
 
 Results.getInitialProps = async function() {
-    const res = await fetch('https://raw.githubusercontent.com/ProjectRecipe/RecipeFinder/master/datasets/recipes.json');
+    const res = await fetch('https://raw.githubusercontent.com/ProjectRecipe/RecipeFinder/master/datasets/clean_recipes_smaller.json');
     const data = await res.json();
 
     console.log(`Recipe data fetched. Count: ${data.length}`);
