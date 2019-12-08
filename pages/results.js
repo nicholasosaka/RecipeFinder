@@ -37,6 +37,10 @@ const Results = props => {
 const topSelection = (arr) => {
     let topSel = [];
 
+    if(arr.length === 0){
+        return topSel;
+    }
+
     for(let i = 0; i < 10; i++){
         topSel.push(arr[i]);
     }
