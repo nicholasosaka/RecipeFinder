@@ -1,49 +1,41 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Layout from '../components/MyLayout';
 import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
+import Form from "../components/Form";
 
-class Index extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {formSubmission: ''};
+const Index = (props) => (
+    <Layout>
+        <h1>Recipe Finder</h1>
+        <p>Enter the ingredients that you want to use (comma separated):</p>
 
-    }
-
-    static async getInitialProps(){
-        const res = await fetch('https://raw.githubusercontent.com/ProjectRecipe/RecipeFinder/master/datasets/clean_recipes_smaller.json');
-        const data = await res.json();
-
-        console.log(`Recipe data fetched. Count: ${data.length}`);
-
-        return {
-            recipes: data
-        };
-    }
-
-    render() {
-        return(
-            <Layout>
-                <h1>Recipe Finder</h1>
-                <p>Enter the ingredients that you want to use (comma separated):</p>
+        <Form/>
 
 
-                <input type="text"/>
+        <p>FOR DEBUG ONLY</p>
+        <ul>
+            {props.recipes.map(recipe =>(
+                <li key={recipe.index}>
+                    <Link href="/recipe/[id]" as={`/recipe/${recipe.index}`}>
+                        <a>{recipe.title}</a>
+                    </Link>
+                </li>
+            ))}
+        </ul>
+    </Layout>
+);
 
+Index.getInitialProps = async function() {
+    const res = await fetch('https://raw.githubusercontent.com/ProjectRecipe/RecipeFinder/master/datasets/clean_recipes_smaller.json');
+    const data = await res.json();
 
-                <p>FOR DEBUG ONLY</p>
-                <ul>
-                    {this.props.recipes.map(recipe =>(
-                        <li key={recipe.index}>
-                            <Link href="/recipe/[id]" as={`/recipe/${recipe.index}`}>
-                                <a>{recipe.title}</a>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </Layout>
-        )
-    }
-}
+    console.log(`Recipe data fetched. Count: ${data.length}`);
+
+    return {
+        recipes: data
+    };
+};
+
 
 export default Index;
