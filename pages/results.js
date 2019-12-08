@@ -4,6 +4,7 @@ import fetch from "isomorphic-unfetch";
 import Link from "next/link";
 import React from "react";
 
+
 const Results = props => {
     const router = useRouter();
 
@@ -17,9 +18,11 @@ const Results = props => {
 
     console.log(fullQueryData);
 
-    const top = processTop(fullQueryData, props.recipes);
+    let top = processTop(fullQueryData, props.recipes);
 
     console.log(top);
+
+    top = sortByCalories(top);
 
     return (
         <Layout>
@@ -30,13 +33,27 @@ const Results = props => {
                 {top.map(recipe =>(
                     <li key={recipe.index}>
                         <Link href="/recipe/[id]" as={`/recipe/${recipe.index}`}>
-                            <a>{recipe.title}</a>
+                            <a>{recipe.title}: {recipe.calories}</a>
                         </Link>
                     </li>
                 ))}
             </ul>
         </Layout>
     );
+};
+
+const sortByCalories = (arr) => {
+    let len = arr.length;
+    for (let i = len-1; i>=0; i--){
+        for(let j = 1; j<=i; j++){
+            if(arr[j-1].calories > arr[j].calories){
+                let temp = arr[j-1];
+                arr[j-1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    return arr;
 };
 
 const processTop = (queryData, recipes) => {
