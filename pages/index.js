@@ -11,18 +11,6 @@ const Index = (props) => (
         <p>Enter the ingredients that you want to use (comma separated):</p>
 
         <Form/>
-
-
-        <p>FOR DEBUG ONLY</p>
-        <ul>
-            {props.recipes.map(recipe =>(
-                <li key={recipe.index}>
-                    <Link href="/recipe/[id]" as={`/recipe/${recipe.index}`}>
-                        <a>{recipe.title}</a>
-                    </Link>
-                </li>
-            ))}
-        </ul>
     </Layout>
 );
 
