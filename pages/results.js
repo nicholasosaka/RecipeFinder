@@ -12,15 +12,9 @@ const Results = props => {
 
     const { q } = router.query;
 
-    console.log(`q: ${q}`);
-
     const fullQueryData = processQueryData(q);
 
-    console.log(fullQueryData);
-
-    const top = sortByCalories(processTop(fullQueryData, props.recipes));
-
-    console.log(top);
+    const top = topSelection(sortByCalories(processTop(fullQueryData, props.recipes)));
 
     return (
         <Layout>
@@ -38,6 +32,16 @@ const Results = props => {
             </ul>
         </Layout>
     );
+};
+
+const topSelection = (arr) => {
+    let topSel = [];
+
+    for(let i = 0; i < 10; i++){
+        topSel.push(arr[i]);
+    }
+
+    return topSel;
 };
 
 const sortByCalories = (arr) => {
