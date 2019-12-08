@@ -18,11 +18,9 @@ const Results = props => {
 
     console.log(fullQueryData);
 
-    let top = processTop(fullQueryData, props.recipes);
+    const top = sortByCalories(processTop(fullQueryData, props.recipes));
 
     console.log(top);
-
-    top = sortByCalories(top);
 
     return (
         <Layout>
